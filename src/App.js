@@ -5,6 +5,8 @@ import Qoute from "./components/Qoute";
 const App = () => {
 	// lets declare a state variable
 	const [qoutes, setQoutes] = useState(null);
+	const [image, setImage] = useState("");
+
 	const api = "https://type.fit/api/quotes";
 
 	useEffect(() => {
@@ -17,9 +19,11 @@ const App = () => {
 		setQoutes(data);
 	};
 
+	document.body.style = `background-image: url(${image})`;
+
 	return (
-		<div>
-			<Qoute getQoutes={qoutes} />
+		<div className="Qoute-Container">
+			<Qoute getQoutes={qoutes} setImage={setImage} />
 		</div>
 	);
 };

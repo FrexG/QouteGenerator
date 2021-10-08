@@ -5,9 +5,18 @@ const Qoute = (props) => {
 	const [qoute, setqoute] = useState({});
 	const pexelsKey = "563492ad6f91700001000001f3b032d7eaa44292b736ef74871317ba";
 
-	const generateQoute = () => {
+	const readQoute = () => {
 		let index = Math.floor(Math.random() * 1600);
+
 		let q = props.getQoutes[index];
+
+		if (q.author === null) {
+			q.author = "Anonymous";
+		}
+		setqoute(q);
+	};
+	const generateQoute = () => {
+		readQoute();
 
 		// Create a pexels client
 		const client = createClient(pexelsKey);
@@ -18,11 +27,6 @@ const Qoute = (props) => {
 			props.setImage(photos.src.original);
 		};
 		getPhoto();
-
-		if (q.author === null) {
-			q.author = "Anonymous";
-		}
-		setqoute(q);
 
 		//console.log(qoute);
 	};

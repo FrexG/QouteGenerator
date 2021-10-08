@@ -9,10 +9,10 @@ body {
 	align-items: center;
 }
 .Qoute-Container {
-	background: linear-gradient(to right, #ffa17f, #00223e);
+	background: linear-gradient(to right, #7ff0ff, #333d96);
 	border-radius: 20%;
 	margin: 20px;
-	opacity: 60%;
+	opacity: 80%;
 }
 .Qoute {
 	vertical-align: middle;
@@ -20,7 +20,7 @@ body {
 	justify-content: center;
 	flex-direction: column;
 	align-items: center;
-	border: #20e4b3;
+	border: #ffa163;
 	border-style: solid;
 	border-radius: 20%;
 	margin: 10px;
